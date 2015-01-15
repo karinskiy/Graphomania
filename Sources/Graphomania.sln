@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{56951822-5520-4E26-B824-21D09275BF64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{FA87BD4F-12CE-4F9A-9810-42ED35DA330B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{79F213BA-EB01-4D00-85D8-DBE99A674138}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS", "CS", "{E7610A97-7739-4C54-9374-3E3EEB00F054}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Acceptance", "Acceptance", "{F06964F6-75ED-4C4F-93F3-242C08AF6637}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{FAB64F66-334F-4C15-B017-C3626007C3FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Graphomania.AcceptanceTests", "Tests\Acceptance\Graphomania.AcceptanceTests\1. Graphomania.AcceptanceTests.csproj", "{CFFED2F0-A0A1-4CA8-BBF5-B1CC6982A50A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Graphomania.ObjectGraphInspector.AcceptanceTests", "Tests\Acceptance\Graphomania.ObjectGraphInspector.AcceptanceTests\2. Graphomania.ObjectGraphInspector.AcceptanceTests.csproj", "{12933D61-8ED5-4A31-B70E-16D0DF5F870A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFFED2F0-A0A1-4CA8-BBF5-B1CC6982A50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFED2F0-A0A1-4CA8-BBF5-B1CC6982A50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFED2F0-A0A1-4CA8-BBF5-B1CC6982A50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFED2F0-A0A1-4CA8-BBF5-B1CC6982A50A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12933D61-8ED5-4A31-B70E-16D0DF5F870A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12933D61-8ED5-4A31-B70E-16D0DF5F870A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12933D61-8ED5-4A31-B70E-16D0DF5F870A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12933D61-8ED5-4A31-B70E-16D0DF5F870A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7610A97-7739-4C54-9374-3E3EEB00F054} = {FA87BD4F-12CE-4F9A-9810-42ED35DA330B}
+		{F06964F6-75ED-4C4F-93F3-242C08AF6637} = {79F213BA-EB01-4D00-85D8-DBE99A674138}
+		{FAB64F66-334F-4C15-B017-C3626007C3FA} = {79F213BA-EB01-4D00-85D8-DBE99A674138}
+		{CFFED2F0-A0A1-4CA8-BBF5-B1CC6982A50A} = {F06964F6-75ED-4C4F-93F3-242C08AF6637}
+		{12933D61-8ED5-4A31-B70E-16D0DF5F870A} = {F06964F6-75ED-4C4F-93F3-242C08AF6637}
+	EndGlobalSection
+EndGlobal
