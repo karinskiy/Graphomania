@@ -86,6 +86,16 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Sources\CS\2. Graphomania.ObjectGraphInspector\2. Graphomania.ObjectGraphInspector.csproj">
+      <Project>{84ef0d91-575e-4d92-88af-2aa417e63c93}</Project>
+      <Name>2. Graphomania.ObjectGraphInspector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{188cf324-aa27-46de-a707-f97b5a8fc03c}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
