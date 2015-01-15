@@ -6,8 +6,8 @@
     <ProjectGuid>{12933D61-8ED5-4A31-B70E-16D0DF5F870A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Graphomania.ObjectGraphInspector.Spec</RootNamespace>
-    <AssemblyName>Graphomania.ObjectGraphInspector.Spec</AssemblyName>
+    <RootNamespace>Graphomania.ObjectGraphInspector.AcceptanceTests</RootNamespace>
+    <AssemblyName>Graphomania.ObjectGraphInspector.AcceptanceTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
