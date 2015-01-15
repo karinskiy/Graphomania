@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "Tests\Accept
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Support", "Tests\Acceptance\Support\Support.csproj", "{2798A444-A71F-4B1F-8542-048D4674A458}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Graphomania.ObjectGraphInspector", "Sources\CS\2. Graphomania.ObjectGraphInspector\2. Graphomania.ObjectGraphInspector.csproj", "{84EF0D91-575E-4D92-88AF-2AA417E63C93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{2798A444-A71F-4B1F-8542-048D4674A458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2798A444-A71F-4B1F-8542-048D4674A458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2798A444-A71F-4B1F-8542-048D4674A458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84EF0D91-575E-4D92-88AF-2AA417E63C93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EF0D91-575E-4D92-88AF-2AA417E63C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EF0D91-575E-4D92-88AF-2AA417E63C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84EF0D91-575E-4D92-88AF-2AA417E63C93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +63,6 @@ Global
 		{12933D61-8ED5-4A31-B70E-16D0DF5F870A} = {F06964F6-75ED-4C4F-93F3-242C08AF6637}
 		{188CF324-AA27-46DE-A707-F97B5A8FC03C} = {F06964F6-75ED-4C4F-93F3-242C08AF6637}
 		{2798A444-A71F-4B1F-8542-048D4674A458} = {F06964F6-75ED-4C4F-93F3-242C08AF6637}
+		{84EF0D91-575E-4D92-88AF-2AA417E63C93} = {E7610A97-7739-4C54-9374-3E3EEB00F054}
 	EndGlobalSection
 EndGlobal
