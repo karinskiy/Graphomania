@@ -74,7 +74,7 @@ namespace Graphomania.AcceptanceTests.Steps
 
                 if (property == null)
                 {
-                    throw new InvalidOperationException(string.Format("Не найден атрибут \"{0}\"", row.Свойство));
+                    throw new InvalidOperationException(string.Format("У типа \"{0}\" не найден атрибут \"{1}\"", source.GetType().Name, row.Свойство));
                 }
 
                 property.SetValue(source, GetExpectedValue(row.Значение));
