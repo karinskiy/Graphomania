@@ -3,20 +3,20 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-Сценарий: Анализ графа.
+Сценарий: Обход графа и получение плоского списка его элементов.
 	Допустим на входе будет объектный граф, описанный таблицей, типы объектов лежат в сборке "DomainModel":
-	| Тип объекта     | Аргументы конструктора       | Имя экземпляра | Связан с   | Метод присвоения      |
-	| HeatingNetwork  | ctor: "Теплосеть 1"          | network        |            |                       |
-	| HeatingSource   | ctor: "Котельная 1", network | hs1            |            |                       |
-	| ConnectionPoint | method: "p1"                 | hs1-point1     | hs1        | CreateConnectionPoint |
-	| Location        | ctor:                        | location1      | hs1-point1 | Point                 |
+	| Тип объекта | Аргументы конструктора | Имя экземпляра | Связан с | Метод присвоения |
+	| Company     | ctor:                  | company1       |          |                  |
+	| Department  | ctor:                  | department1    | company1 | Departments      |
+	| Department  | ctor:                  | department2    | company1 | Departments      |
 	К тому же свойства объектов содержат следующие значения:
-	| Имя экземпляра | Свойство    | Значение        |
-	| network        | Description | "Тепловая сеть" |
-	| hs1-point1     | Location    | @location1      |
+	| Имя экземпляра | Свойство | Значение                 |
+	| company1       | Title    | "ИГИТ"                   |
+	| department1    | Title    | "Отдел разработки"       |
+	| department2    | Title    | "Отдел 3d-моделирования" |
 
 	Тогда на выходе будет список элементов, описывающих объекты объектного графа:
-	| Тип элемента | Тип объекта    | ID объекта | ID начала | ID конца | Имя связи    | Содержимое атрибутов объекта в JSON                   |
-	| Node         | HeatingNetwork | 1          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
-	| Node         | HeatingSource  | 2          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
-	| Relation     |                |            | 1         | 2        | Connectables |                                                       |
+	| Тип элемента | Тип объекта | ID объекта | ID начала | ID конца | Имя связи    | Содержимое атрибутов объекта в JSON                   |
+	| Node         | Company     | 1          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
+	| Node         | Department  | 2          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
+	| Relation     |             |            | 1         | 2        | Connectables |                                                       |

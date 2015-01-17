@@ -46,6 +46,9 @@
     <Compile Include="HeatingSource.cs" />
     <Compile Include="HeatingSystemElement.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Personal\Company.cs" />
+    <Compile Include="Personal\Department.cs" />
+    <Compile Include="Personal\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

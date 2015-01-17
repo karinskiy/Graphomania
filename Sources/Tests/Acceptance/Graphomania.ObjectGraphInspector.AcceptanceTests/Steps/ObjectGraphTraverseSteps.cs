@@ -1,26 +1,27 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 
-namespace Graphomania.AcceptanceTests.Steps
+namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
 {
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using DomainModel.Personal;
 
     [Binding]
-    public class СохранениеОбъектногоГрафаВБД_Steps
+    public class ObjectGraphTraverseSteps
     {
-        [Given(@"существует объектный граф, описанный таблицей, объекты лежат в сборке ""(.*)"":")]
-        public void ДопустимСуществуетОбъектныйГрафОписанныйТаблицейОбъектыЛежатВСборке(string assemblyName, IEnumerable<dynamic> table)
+        [Given(@"на входе будет объектный граф, описанный таблицей, типы объектов лежат в сборке ""(.*)"":")]
+        public void ДопустимНаВходеБудетОбъектныйГрафОписанныйТаблицейТипыОбъектовЛежатВСборке(string assemblyName, IEnumerable<dynamic> table)
         {
             foreach (var row in table)
             {
                 Type objectType = GetObjectTypeByName(assemblyName, row.ТипОбъекта);
-                var objectInstance = CreateInstance(objectType, row.АргументыКонструктора, row.СвязанС, row.МетодПрисвоения);
+                object objectInstance = CreateInstance(objectType, row.АргументыКонструктора, row.СвязанС, row.МетодПрисвоения);
                 createdObjects.Add(row.ИмяЭкземпляра, objectInstance);
+
 
 
                 var referenceName = row.МетодПрисвоения;
@@ -29,6 +30,20 @@ namespace Graphomania.AcceptanceTests.Steps
                     IEnumerable<MemberInfo> members = objectType.GetMember(referenceName);
 
                     var reference = members.SingleOrDefault();
+
+                    if (reference == null && !string.IsNullOrWhiteSpace((string)row.СвязанС))
+                    {
+                        object owner = createdObjects[row.СвязанС];
+                        PropertyInfo property = owner.GetType().GetProperty(referenceName);
+
+
+                        var addMethod = property.PropertyType.GetMethod("Add");
+                        var collectionInstance = property.GetValue(owner);
+
+                        addMethod.Invoke(collectionInstance, new[] { objectInstance });
+
+                        continue;
+                    }
 
                     if (reference == null)
                     {
@@ -79,26 +94,8 @@ namespace Graphomania.AcceptanceTests.Steps
             }
         }
 
-        [Then(@"он будет сохранен в БД,")]
-        public void ТоОнБудетСохраненВБД()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"после загружен заново,")]
-        public void ТоПослеЗагруженЗаново()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"тогда в загруженном графе объекты будут связаны между собой так, как указано в таблице")]
-        public void ТоТогдаВЗагруженномГрафеОбъектыБудутСвязаныМеждуСобойТакКакУказаноВТаблице(IEnumerable<dynamic> table)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"свойства этих объектов будут имеють значения:")]
-        public void ТоСвойстваЭтихОбъектовБудутИмеютьЗначения(IEnumerable<dynamic> table)
+        [Then(@"на выходе будет список элементов, описывающих объекты объектного графа:")]
+        public void ТоНаВыходеБудетСписокЭлементовОписывающихОбъектыОбъектногоГрафа(IEnumerable<dynamic> table)
         {
             ScenarioContext.Current.Pending();
         }
