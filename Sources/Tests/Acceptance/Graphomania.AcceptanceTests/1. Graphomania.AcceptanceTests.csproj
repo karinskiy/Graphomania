@@ -87,16 +87,6 @@
       <LastGenOutput>SaveObjectGraphToDatabase.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
-      <Project>{188cf324-aa27-46de-a707-f97b5a8fc03c}</Project>
-      <Name>DomainModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Support\Support.csproj">
-      <Project>{2798a444-a71f-4b1f-8542-048d4674a458}</Project>
-      <Name>Support</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
