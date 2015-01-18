@@ -13,6 +13,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
 
     using FluentAssertions;
 
+    using Graphomania.ObjectGraphInspector.BuildingQueue;
     using Graphomania.ObjectGraphInspector.Model;
 
     using TechTalk.SpecFlow.Assist;
@@ -21,8 +22,14 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
     public class ObjectGraphTraverseSteps
     {
         private readonly IObjectGraphInspector objectGraphInspector;
+        private readonly IProducerConsumerQueue queue;
         private IEnumerable<ObjectGraphElement> actualElements;
 
+        public ObjectGraphTraverseSteps(IObjectGraphInspector objectGraphInspector, IProducerConsumerQueue queue)
+        {
+            this.objectGraphInspector = objectGraphInspector;
+            this.queue = queue;
+        }
 
         [Given(@"на входе будет объектный граф, описанный таблицей, типы объектов лежат в сборке ""(.*)"":")]
         public void ДопустимНаВходеБудетОбъектныйГрафОписанныйТаблицейТипыОбъектовЛежатВСборке(string assemblyName, IEnumerable<dynamic> table)
@@ -101,42 +108,48 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
                     throw new InvalidOperationException(string.Format("У типа \"{0}\" не найден атрибут \"{1}\"", source.GetType().Name, row.Свойство));
                 }
 
-                var value = GetExpectedValue(row.Значение);
+                var value = GetExpectedValue(Convert.ToString(row.Значение));
                 property.SetValue(source, value);
             }
         }
 
-        [Then(@"на выходе будет список элементов, описывающих объекты объектного графа:")]
-        public void ТоНаВыходеБудетСписокЭлементовОписывающихОбъектыОбъектногоГрафа(IEnumerable<ObjectGraphElement> expectedElements)
+        [When(@"выполнить обход графа,")]
+        public void ЕслиВыполнитьОбходГрафа()
         {
-            actualElements = new ObjectGraphElement[]
-                             {
-                                 new NodeElement("Company", "1"), 
-                                 new NodeElement("Department", "2"), 
-                                 new NodeElement("Department", "3"), 
-                                 new RelationElement("1", "Departments", "2"), 
-                                 new RelationElement("1", "Departments", "3"), 
-                             };
+            var root = createdObjects.First();
+            objectGraphInspector.Inspect(root);
 
+            actualElements = queue.GetElements();
+        }
+
+        [Then(@"на выходе будет список элементов, описывающих объекты объектного графа:")]
+        public void ТоНаВыходеБудетСписокЭлементовОписывающихОбъектыОбъектногоГрафа(ObjectGraphElement[] expectedElements)
+        {
             var nodePairs = from actualNode in actualElements.OfType<NodeElement>()
                             join expectedNode in expectedElements.OfType<NodeElement>() on actualNode.ObjectId equals expectedNode.ObjectId
                             select new { Actual = actualNode, Expected = expectedNode };
 
             foreach (var nodePair in nodePairs)
             {
-                nodePair.Actual.ShouldBeEquivalentTo(nodePair.Expected);
+                var actual = nodePair.Actual;
+                var expected = nodePair.Expected;
+
+                actual.ShouldBeEquivalentTo(expected);
             }
 
             actualElements.OfType<RelationElement>()
                 .ShouldAllBeEquivalentTo(expectedElements.OfType<RelationElement>());
-
-            //TODO: Как-то нужно аравнивать отношения!
         }
 
         [StepArgumentTransformation]
-        public static IEnumerable<ObjectGraphElement> TObjectGraphElements(Table table)
+        public static ObjectGraphElement[] ToObjectGraphElements(Table table)
         {
-            foreach (dynamic row in table.CreateDynamicSet())
+            return ToObjectGraphElements(table.CreateDynamicSet()).ToArray();
+        }
+
+        public static IEnumerable<ObjectGraphElement> ToObjectGraphElements(IEnumerable<dynamic> rows)
+        {
+            foreach (dynamic row in rows)
             {
                 switch ((string)row.ТипЭлемента)
                 {
@@ -149,6 +162,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
                 }
             }
         }
+
 
         #region Internal methods
 
@@ -166,7 +180,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
             int result = 0;
             if (Int32.TryParse(value, out result))
             {
-                return result;
+                return result.ToString();
             }
             else if (value.StartsWith("\"") && value.EndsWith("\""))
             {

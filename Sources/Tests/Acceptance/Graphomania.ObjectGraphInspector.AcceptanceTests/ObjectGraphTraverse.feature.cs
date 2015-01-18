@@ -32,7 +32,8 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("ru-RU"), "Object graph traverse", "In order to avoid silly mistakes\r\nAs a math idiot\r\nI want to be told the sum of t" +
-                    "wo numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "wo numbers", ProgrammingLanguage.CSharp, new string[] {
+                        "Имитация"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -72,10 +73,11 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Обход графа и получение плоского списка его элементов.")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Object graph traverse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Имитация")]
         public virtual void ОбходГрафаИПолучениеПлоскогоСпискаЕгоЭлементов_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Обход графа и получение плоского списка его элементов.", ((string[])(null)));
-#line 6
+#line 7
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -102,7 +104,7 @@ this.ScenarioSetup(scenarioInfo);
                         "department2",
                         "company1",
                         "Departments"});
-#line 7
+#line 8
  testRunner.Given("на входе будет объектный граф, описанный таблицей, типы объектов лежат в сборке \"" +
                     "DomainModel\":", ((string)(null)), table1, "Допустим ");
 #line hidden
@@ -113,7 +115,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "company1",
                         "ID",
-                        "\"1\""});
+                        "1"});
             table2.AddRow(new string[] {
                         "company1",
                         "Title",
@@ -121,7 +123,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "department1",
                         "ID",
-                        "\"2\""});
+                        "2"});
             table2.AddRow(new string[] {
                         "department1",
                         "Title",
@@ -129,13 +131,15 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "department2",
                         "ID",
-                        "\"3\""});
+                        "3"});
             table2.AddRow(new string[] {
                         "department2",
                         "Title",
                         "\"Отдел 3d-моделирования\""});
-#line 12
+#line 13
  testRunner.And("свойства объектов содержат следующие значения:", ((string)(null)), table2, "К тому же ");
+#line 22
+ testRunner.When("выполнить обход графа,", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Если ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Тип элемента",
@@ -185,8 +189,8 @@ this.ScenarioSetup(scenarioInfo);
                         "3",
                         "Departments",
                         ""});
-#line 21
- testRunner.Then("на выходе будет список элементов, описывающих объекты объектного графа:", ((string)(null)), table3, "Тогда ");
+#line 24
+ testRunner.Then("на выходе будет список элементов, описывающих объекты объектного графа:", ((string)(null)), table3, "То ");
 #line hidden
             this.ScenarioCleanup();
         }

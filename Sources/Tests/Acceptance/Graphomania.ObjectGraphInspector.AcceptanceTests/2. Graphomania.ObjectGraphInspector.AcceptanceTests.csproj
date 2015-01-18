@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\ObjectGraphTraverseSteps.cs" />
+    <Compile Include="Tags\ComponentsRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
