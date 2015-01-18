@@ -19,8 +19,9 @@
 	| department2    | Title    | "Отдел 3d-моделирования" |
 
 	Тогда на выходе будет список элементов, описывающих объекты объектного графа:
-	| Тип элемента | Тип объекта | ID объекта | ID начала | ID конца | Имя связи    | Содержимое атрибутов объекта в JSON                   |
-	| Node         | Company     | 1          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
-	| Node         | Department  | 2          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
-	| Node         | Department  | 3          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
-	| Relation     |             |            | 1         | 2        | Connectables |                                                       |
+	| Тип элемента | Тип объекта | ID объекта | ID начала | ID конца | Имя связи   | Содержимое атрибутов объекта в JSON                   |
+	| Node         | Company     | 1          |           |          |             | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
+	| Node         | Department  | 2          |           |          |             | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
+	| Node         | Department  | 3          |           |          |             | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
+	| Relation     |             |            | 1         | 2        | Departments |                                                       |
+	| Relation     |             |            | 1         | 3        | Departments |                                                       |

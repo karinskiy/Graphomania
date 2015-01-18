@@ -175,7 +175,15 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "1",
                         "2",
-                        "Connectables",
+                        "Departments",
+                        ""});
+            table3.AddRow(new string[] {
+                        "Relation",
+                        "",
+                        "",
+                        "1",
+                        "3",
+                        "Departments",
                         ""});
 #line 21
  testRunner.Then("на выходе будет список элементов, описывающих объекты объектного графа:", ((string)(null)), table3, "Тогда ");

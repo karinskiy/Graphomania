@@ -4,9 +4,13 @@
 
     public class RelationElement : ObjectGraphElement, IEquatable<RelationElement>
     {
+        private readonly string elementFromId;
+
         private readonly NodeElement elementFrom;
 
         private readonly string relationName;
+
+        private readonly string elementToId;
 
         private readonly NodeElement elementTo;
 
@@ -20,6 +24,13 @@
         public RelationElement(ObjectGraphElement elementFrom, string relationName, ObjectGraphElement elementTo) : 
             this((NodeElement)elementFrom, relationName, (NodeElement)elementTo)
         {
+        }
+
+        public RelationElement(string elementFromId, string relationName, string elementToId)
+        {
+            this.elementFromId = elementFromId;
+            this.relationName = relationName;
+            this.elementToId = elementToId;
         }
 
         public NodeElement ElementFrom
@@ -46,6 +57,22 @@
             }
         }
 
+        public string ElementFromId
+        {
+            get
+            {
+                return this.elementFromId;
+            }
+        }
+
+        public string ElementToId
+        {
+            get
+            {
+                return this.elementToId;
+            }
+        }
+
         public bool Equals(RelationElement other)
         {
             if (ReferenceEquals(null, other))
@@ -56,7 +83,7 @@
             {
                 return true;
             }
-            return Equals(this.elementFrom, other.elementFrom) && string.Equals(this.relationName, other.relationName) && Equals(this.elementTo, other.elementTo);
+            return string.Equals(this.elementFromId, other.elementFromId) && string.Equals(this.relationName, other.relationName) && string.Equals(this.elementToId, other.elementToId);
         }
 
         public override bool Equals(object obj)
@@ -80,9 +107,9 @@
         {
             unchecked
             {
-                int hashCode = (this.elementFrom != null ? this.elementFrom.GetHashCode() : 0);
+                int hashCode = (this.elementFromId != null ? this.elementFromId.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (this.relationName != null ? this.relationName.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (this.elementTo != null ? this.elementTo.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (this.elementToId != null ? this.elementToId.GetHashCode() : 0);
                 return hashCode;
             }
         }

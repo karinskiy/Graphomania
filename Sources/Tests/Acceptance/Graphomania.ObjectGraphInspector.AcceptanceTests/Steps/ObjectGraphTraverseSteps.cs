@@ -109,11 +109,13 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
         [Then(@"на выходе будет список элементов, описывающих объекты объектного графа:")]
         public void ТоНаВыходеБудетСписокЭлементовОписывающихОбъектыОбъектногоГрафа(IEnumerable<ObjectGraphElement> expectedElements)
         {
-            actualElements = new[]
+            actualElements = new ObjectGraphElement[]
                              {
-                                 new NodeElement("Company1", "1"), 
+                                 new NodeElement("Company", "1"), 
                                  new NodeElement("Department", "2"), 
                                  new NodeElement("Department", "3"), 
+                                 new RelationElement("1", "Departments", "2"), 
+                                 new RelationElement("1", "Departments", "3"), 
                              };
 
             var nodePairs = from actualNode in actualElements.OfType<NodeElement>()
@@ -124,6 +126,9 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
             {
                 nodePair.Actual.ShouldBeEquivalentTo(nodePair.Expected);
             }
+
+            actualElements.OfType<RelationElement>()
+                .ShouldAllBeEquivalentTo(expectedElements.OfType<RelationElement>());
 
             //TODO: Как-то нужно аравнивать отношения!
         }
@@ -139,6 +144,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
                         yield return new NodeElement(objectType: (string)row.ТипОбъекта, objectId: Convert.ToString(row.IDОбъекта));
                         break;
                     case "Relation":
+                        yield return new RelationElement(elementFromId: Convert.ToString(row.IDНачала), relationName: (string)row.ИмяСвязи, elementToId: Convert.ToString(row.IDКонца));
                         break;
                 }
             }
