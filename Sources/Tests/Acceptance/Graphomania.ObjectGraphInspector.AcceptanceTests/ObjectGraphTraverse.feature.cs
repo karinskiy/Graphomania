@@ -112,12 +112,24 @@ this.ScenarioSetup(scenarioInfo);
                         "Значение"});
             table2.AddRow(new string[] {
                         "company1",
+                        "ID",
+                        "\"1\""});
+            table2.AddRow(new string[] {
+                        "company1",
                         "Title",
                         "\"ИГИТ\""});
             table2.AddRow(new string[] {
                         "department1",
+                        "ID",
+                        "\"2\""});
+            table2.AddRow(new string[] {
+                        "department1",
                         "Title",
                         "\"Отдел разработки\""});
+            table2.AddRow(new string[] {
+                        "department2",
+                        "ID",
+                        "\"3\""});
             table2.AddRow(new string[] {
                         "department2",
                         "Title",
@@ -150,6 +162,14 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "{ Name: \"Теплосеть 1\", Description: \"Тепловая сеть\" }"});
             table3.AddRow(new string[] {
+                        "Node",
+                        "Department",
+                        "3",
+                        "",
+                        "",
+                        "",
+                        "{ Name: \"Теплосеть 1\", Description: \"Тепловая сеть\" }"});
+            table3.AddRow(new string[] {
                         "Relation",
                         "",
                         "",
@@ -157,7 +177,7 @@ this.ScenarioSetup(scenarioInfo);
                         "2",
                         "Connectables",
                         ""});
-#line 18
+#line 21
  testRunner.Then("на выходе будет список элементов, описывающих объекты объектного графа:", ((string)(null)), table3, "Тогда ");
 #line hidden
             this.ScenarioCleanup();

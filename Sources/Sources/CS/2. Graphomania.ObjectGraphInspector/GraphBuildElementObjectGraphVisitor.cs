@@ -21,7 +21,7 @@
         public void Visit(object node)
         {
             // Построение описателя узла графа.
-            var nodeElement = new NodeElement();
+            var nodeElement = new NodeElement("", "");
 
             var publicProperties = node.GetType().GetProperties().Where(p => p.IsPlainProperty(this.domainTypes));
             foreach (var property in publicProperties)

@@ -11,12 +11,16 @@
 	| Department  | ctor:                  | department2    | company1 | Departments      |
 	К тому же свойства объектов содержат следующие значения:
 	| Имя экземпляра | Свойство | Значение                 |
+	| company1       | ID       | "1"                      |
 	| company1       | Title    | "ИГИТ"                   |
+	| department1    | ID       | "2"                      |
 	| department1    | Title    | "Отдел разработки"       |
+	| department2    | ID       | "3"                      |
 	| department2    | Title    | "Отдел 3d-моделирования" |
 
 	Тогда на выходе будет список элементов, описывающих объекты объектного графа:
 	| Тип элемента | Тип объекта | ID объекта | ID начала | ID конца | Имя связи    | Содержимое атрибутов объекта в JSON                   |
 	| Node         | Company     | 1          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
 	| Node         | Department  | 2          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
+	| Node         | Department  | 3          |           |          |              | { Name: "Теплосеть 1", Description: "Тепловая сеть" } |
 	| Relation     |             |            | 1         | 2        | Connectables |                                                       |
