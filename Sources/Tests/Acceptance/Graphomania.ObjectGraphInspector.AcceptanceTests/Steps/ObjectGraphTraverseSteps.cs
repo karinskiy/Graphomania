@@ -111,11 +111,10 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
         {
             actualElements = new[]
                              {
-                                 new NodeElement("Company", "1"), 
+                                 new NodeElement("Company1", "1"), 
                                  new NodeElement("Department", "2"), 
                                  new NodeElement("Department", "3"), 
                              };
-
 
             var nodePairs = from actualNode in actualElements.OfType<NodeElement>()
                             join expectedNode in expectedElements.OfType<NodeElement>() on actualNode.ObjectId equals expectedNode.ObjectId
