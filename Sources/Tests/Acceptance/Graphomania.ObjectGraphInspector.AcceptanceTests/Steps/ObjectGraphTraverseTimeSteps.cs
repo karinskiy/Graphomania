@@ -3,6 +3,7 @@ using TechTalk.SpecFlow;
 
 namespace Graphomania.ObjectGraphInspector.AcceptanceTests
 {
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
     using System.Linq.Expressions;
@@ -13,6 +14,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests
 
     using FluentAssertions;
 
+    using Graphomania.ObjectGraphInspector.AcceptanceTests.Mocks;
     using Graphomania.ObjectGraphInspector.TraverseStrategies;
 
     [Binding]
@@ -24,7 +26,6 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests
         private readonly ISingleObjectBuilder<HierarchySpec<Employee>> hierarchySpec;
         
         private object objectGraph;
-        private TimeSpan etalonRunSpeed;
 
 
         public ObjectGraphTraverseTimeSteps()
@@ -101,7 +102,11 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests
                 throw new ArgumentException(string.Format("Тип \"{0}\" не найден!", strategyName));
             }
 
-            return (IObjectGraphInspector)Activator.CreateInstance(strategyType);
+            //var traversedObjectRegistry = new DefaultTraversedObjectRegistry();
+            //var producerConsumerQueue = new ProducerConsumerQueueMock();
+            //var objectGraphVisitor = new GraphBuildElementObjectGraphVisitor(producerConsumerQueue, new[] { typeof(Employee) });
+            //var referenceProvider = new 
+            return (IObjectGraphInspector)Activator.CreateInstance(strategyType, null, null, null);
         }
 
         private TimeSpan TestSpeed(IObjectGraphInspector instance)

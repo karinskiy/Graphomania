@@ -74,6 +74,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Mocks\ProducerConsumerQueueMock.cs" />
     <Compile Include="ObjectGraphTraverse.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
