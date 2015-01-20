@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using Graphomania.ObjectGraphInspector.BuildingQueue;
     using Graphomania.ObjectGraphInspector.Model;
@@ -18,7 +19,7 @@
             this.domainTypes = domainTypes;
         }
 
-        public void Visit(object node)
+        public async Task Visit(object node)
         {
             // Построение описателя узла графа.
             var nodeElement = new NodeElement("", "");
@@ -31,10 +32,10 @@
             }
 
             // Отправка в очередь.
-            this.producerConsumerQueue.Enqueue(nodeElement);
+            await producerConsumerQueue.Enqueue(nodeElement);
         }
 
-        public void Visit(Reference reference)
+        public async Task Visit(Reference reference)
         {
             throw new NotImplementedException();
         }

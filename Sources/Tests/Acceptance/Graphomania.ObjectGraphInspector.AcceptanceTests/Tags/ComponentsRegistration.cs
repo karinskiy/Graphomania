@@ -64,7 +64,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Tags
 
             // Имитация
             var producerConsumerQueue = new Mock<IProducerConsumerQueue>();
-            producerConsumerQueue.Setup(o => o.GetElements()).Returns(() => expectedElements);
+            producerConsumerQueue.Setup(o => o.GetElements()).Returns(() => Task.Run<IEnumerable<ObjectGraphElement>>(() => expectedElements));
 
             // Регистрация
             objectContainer.RegisterInstanceAs(producerConsumerQueue.Object);

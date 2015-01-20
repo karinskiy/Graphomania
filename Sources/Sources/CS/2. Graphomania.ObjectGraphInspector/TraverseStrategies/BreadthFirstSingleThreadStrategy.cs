@@ -1,6 +1,7 @@
 ﻿namespace Graphomania.ObjectGraphInspector.TraverseStrategies
 {
     using System.Threading;
+    using System.Threading.Tasks;
 
     public class BreadthFirstSingleThreadStrategy : ObjectGraphInspectorStrategy
     {
@@ -9,7 +10,7 @@
         {
         }
 
-        public override void Inspect(object graphRoot)
+        public override async Task Inspect(object graphRoot)
         {
             Thread.Sleep(850);
         }

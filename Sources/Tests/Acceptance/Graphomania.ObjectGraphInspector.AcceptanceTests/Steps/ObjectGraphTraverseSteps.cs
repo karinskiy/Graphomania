@@ -119,7 +119,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Steps
             var root = createdObjects.First();
             objectGraphInspector.Inspect(root);
 
-            actualElements = queue.GetElements();
+            actualElements = (queue.GetElements()).Result;
         }
 
         [Then(@"на выходе будет список элементов, описывающих объекты объектного графа:")]

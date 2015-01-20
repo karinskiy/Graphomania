@@ -1,5 +1,7 @@
 ﻿namespace Graphomania.ObjectGraphInspector.TraverseStrategies
 {
+    using System.Threading.Tasks;
+
     public abstract class ObjectGraphInspectorStrategy : IObjectGraphInspector
     {
         protected readonly ITraversedObjectRegistry traversedObjectRegistry;
@@ -13,6 +15,6 @@
             this.referenceProvider = referenceProvider;
         }
 
-        public abstract void Inspect(object graphRoot);
+        public abstract Task Inspect(object graphRoot);
     }
 }

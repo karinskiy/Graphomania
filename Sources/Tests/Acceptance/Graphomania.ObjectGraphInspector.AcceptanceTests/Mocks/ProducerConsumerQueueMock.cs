@@ -11,11 +11,11 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests.Mocks
 
     internal class ProducerConsumerQueueMock : IProducerConsumerQueue
     {
-        public void Enqueue(ObjectGraphElement element)
+        public async Task Enqueue(ObjectGraphElement element)
         {
         }
 
-        public IEnumerable<ObjectGraphElement> GetElements()
+        public async Task<IEnumerable<ObjectGraphElement>> GetElements()
         {
             throw new NotImplementedException();
         }

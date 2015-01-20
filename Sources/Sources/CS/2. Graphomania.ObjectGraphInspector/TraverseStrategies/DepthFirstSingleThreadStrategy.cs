@@ -1,6 +1,7 @@
 ﻿namespace Graphomania.ObjectGraphInspector.TraverseStrategies
 {
     using System.Threading;
+    using System.Threading.Tasks;
 
     public class DepthFirstSingleThreadStrategy : ObjectGraphInspectorStrategy
     {
@@ -9,32 +10,32 @@
         {
         }
 
-        public override void Inspect(object graphRoot)
+        public override async Task Inspect(object graphRoot)
         {
-            if (this.AlreadyTraversed(graphRoot))
+            if (AlreadyTraversed(graphRoot))
             {
                 return;
             }
 
-            this.MarkAsTraversed(graphRoot);
+            MarkAsTraversed(graphRoot);
 
-            this.graphVisitor.Visit(graphRoot);
+            await graphVisitor.Visit(graphRoot);
 
-            foreach (var reference in this.referenceProvider.GetReferences(graphRoot))
+            foreach (var reference in referenceProvider.GetReferences(graphRoot))
             {
-                this.graphVisitor.Visit(reference);
-                this.Inspect(reference.To);
+                await graphVisitor.Visit(reference);
+                await Inspect(reference.To);
             }
         }
 
         private bool AlreadyTraversed(object graphRoot)
         {
-            return this.traversedObjectRegistry.AlreadyTraversed(graphRoot);
+            return traversedObjectRegistry.AlreadyTraversed(graphRoot);
         }
 
         private void MarkAsTraversed(object graphRoot)
         {
-            this.traversedObjectRegistry.MarkAsTraversed(graphRoot);
+            traversedObjectRegistry.MarkAsTraversed(graphRoot);
         }
     }
 }

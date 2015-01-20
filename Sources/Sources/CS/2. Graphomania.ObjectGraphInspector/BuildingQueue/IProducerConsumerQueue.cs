@@ -1,13 +1,14 @@
 ﻿namespace Graphomania.ObjectGraphInspector.BuildingQueue
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using Graphomania.ObjectGraphInspector.Model;
 
     public interface IProducerConsumerQueue
     {
-        void Enqueue(ObjectGraphElement element);
+        Task Enqueue(ObjectGraphElement element);
 
-        IEnumerable<ObjectGraphElement> GetElements();
+        Task<IEnumerable<ObjectGraphElement>> GetElements();
     }
 }
