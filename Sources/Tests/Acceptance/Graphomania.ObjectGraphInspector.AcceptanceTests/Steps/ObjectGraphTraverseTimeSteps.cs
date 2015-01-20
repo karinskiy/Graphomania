@@ -102,7 +102,7 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests
                 throw new ArgumentException(string.Format("Тип \"{0}\" не найден!", strategyName));
             }
 
-            //var traversedObjectRegistry = new DefaultTraversedObjectRegistry();
+            //var traversedObjectRegistry = new HashsetObjectRegistry();
             //var producerConsumerQueue = new ProducerConsumerQueueMock();
             //var objectGraphVisitor = new GraphBuildElementObjectGraphVisitor(producerConsumerQueue, new[] { typeof(Employee) });
             //var referenceProvider = new 

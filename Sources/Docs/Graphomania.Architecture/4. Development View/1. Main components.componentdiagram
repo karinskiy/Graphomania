@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e3274084-92d7-4234-82d2-ec17ec8fabcd" name="Main components" linkedPackageId="ad95ad39-dd0f-4573-9917-4fc835e789c2" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="a046ba73-4383-47d4-9575-2066c5d13a4d" name="ObjectGraphInspector" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0cc2793f-8c0a-48cf-bdaa-5324fc5dbd4d" />
+        <ownedAttributesInternal>
+          <providedInterface Id="aa1f9cb4-7534-4656-ab28-1cacbb6c8cf0" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="29ab5e65-02bd-4691-88a3-94332f1ac172" />
+            <type_NamedElement>
+              <interfaceMoniker Id="e188701d-6884-434d-a11b-74ae3afd08e6" LastKnownName="IObjectGraphInspector" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="49a858c8-6796-41a4-b415-79a1cdf89b93" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="c3554a62-69d5-4cee-9e2c-a284a08c3a24" />
+            <type_NamedElement>
+              <interfaceMoniker Id="7c5328e2-99f3-4481-9974-2e85309aa943" LastKnownName="IPublisherConsumerQueue" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="de476684-75e5-4c9a-9c88-34dbabc76ee9" name="CommandTranslator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7d8228e8-099f-415f-82ca-6de031112c16" />
+        <suppliersInternal>
+          <dependency Id="0380a8b4-f20e-45cb-9035-6c5376b1e979">
+            <componentMoniker Id="a046ba73-4383-47d4-9575-2066c5d13a4d" LastKnownName="ObjectGraphInspector" />
+            <elementDefinition Id="6b6a2876-5d93-494e-b1e7-cbe3cd8ed26f" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="23d4a0e4-4a27-475c-baea-865785e5b92b" name="DatabaseAdapter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f4e0be22-d5c0-43e1-9c97-304fc75d7d48" />
+        <suppliersInternal>
+          <dependency Id="b103ceb4-ef7d-496c-8b18-b695f64ca225">
+            <componentMoniker Id="de476684-75e5-4c9a-9c88-34dbabc76ee9" LastKnownName="CommandTranslator" />
+            <elementDefinition Id="b0e6a52b-d8ca-4b52-9cc9-d1d92d4fd0b6" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="e188701d-6884-434d-a11b-74ae3afd08e6" name="IObjectGraphInspector" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="149a91a3-b153-4da2-81b7-e0c112d49eab" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="7c5328e2-99f3-4481-9974-2e85309aa943" name="IPublisherConsumerQueue" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1ba15543-a0ac-4125-87e1-6277a5867c57" />
+      </Interface>
+    </modelContainsNamedElements>
+  </packagedElements>
+  <package Id="ad95ad39-dd0f-4573-9917-4fc835e789c2" name="Graphomania.Architecture">
+    <elementDefinition Id="85f4c8a1-a49c-426d-a991-8daadfd7f868" />
+    <profileInstances>
+      <packageHasProfileInstances Id="d4f27c11-5854-42cc-9cb0-fba6a40215c6">
+        <profileInstance Id="3edf6857-14d0-4ba5-8e74-168251306a94" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1e5cc153-8df2-411c-b337-a15f391ff00f">
+        <profileInstance Id="5802fc8f-f905-487d-892f-1fd746d90b65" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</componentModel>

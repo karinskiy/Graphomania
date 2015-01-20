@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class DefaultTraversedObjectRegistry : ITraversedObjectRegistry
+    public class HashsetObjectRegistry : ITraversedObjectRegistry
     {
         private readonly ICollection<object> traversedObjects = new HashSet<object>(); 
 

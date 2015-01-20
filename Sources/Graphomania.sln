@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "Tests\Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Support", "Tests\Support\Support.csproj", "{2798A444-A71F-4B1F-8542-048D4674A458}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Graphomania.Architecture", "Docs\Graphomania.Architecture\Graphomania.Architecture.modelproj", "{5C2E8BA4-F6F0-4305-9BD9-D4722F04FCE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{2798A444-A71F-4B1F-8542-048D4674A458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2798A444-A71F-4B1F-8542-048D4674A458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2798A444-A71F-4B1F-8542-048D4674A458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C2E8BA4-F6F0-4305-9BD9-D4722F04FCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2E8BA4-F6F0-4305-9BD9-D4722F04FCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2E8BA4-F6F0-4305-9BD9-D4722F04FCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2E8BA4-F6F0-4305-9BD9-D4722F04FCE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{0F0EA121-BA33-44E6-BDE0-97B9D3454DA8} = {E7610A97-7739-4C54-9374-3E3EEB00F054}
 		{188CF324-AA27-46DE-A707-F97B5A8FC03C} = {79F213BA-EB01-4D00-85D8-DBE99A674138}
 		{2798A444-A71F-4B1F-8542-048D4674A458} = {79F213BA-EB01-4D00-85D8-DBE99A674138}
+		{5C2E8BA4-F6F0-4305-9BD9-D4722F04FCE3} = {56951822-5520-4E26-B824-21D09275BF64}
 	EndGlobalSection
 EndGlobal
