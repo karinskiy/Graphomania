@@ -39,8 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TraverseStrategies\BreadthFirstSingleThreadStrategy.cs" />
     <Compile Include="BuildingQueue\IProducerConsumerQueue.cs" />
     <Compile Include="DefaultTraversedObjectRegistry.cs" />
+    <Compile Include="TraverseStrategies\DepthFirstMultiThreadStrategy.cs" />
+    <Compile Include="TraverseStrategies\DepthFirstSingleThreadStrategy.cs" />
     <Compile Include="GraphBuildElementObjectGraphVisitor.cs" />
     <Compile Include="IObjectGraphInspector.cs" />
     <Compile Include="IObjectGraphVisitor.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="Model\ObjectGraphElement.cs" />
     <Compile Include="Model\NodeElement.cs" />
     <Compile Include="Model\RelationElement.cs" />
+    <Compile Include="TraverseStrategies\ObjectGraphInspectorStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyDesc.cs" />
     <Compile Include="Reference.cs" />

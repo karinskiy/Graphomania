@@ -205,12 +205,16 @@ this.ScenarioSetup(scenarioInfo);
 #line 36
  testRunner.And("минимальным количеством дочерних элементов 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "И ");
 #line 37
- testRunner.And("максимальным количеством 10.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "И ");
-#line 39
- testRunner.When(string.Format("выбрана {0} обхода графа (для 300 элементов),", стратегия), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Если ");
+ testRunner.And("максимальным количеством 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "И ");
+#line 38
+ testRunner.And("количеством элементов в графе 500.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "И ");
 #line 40
- testRunner.Then(string.Format("должен быть {0} обхода относительно эталонного (однопоточный алгоритм обхода вглу" +
-                        "бь).", приростСкорости), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "То ");
+ testRunner.When("выбрана эталонная стратегия обхода графа \"DepthFirstSingleThreadStrategy\" (однопо" +
+                    "точный алгоритм обхода вглубь)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Если ");
+#line 41
+ testRunner.And(string.Format("выбрана другая {0} обхода графа,", стратегия), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "И ");
+#line 42
+ testRunner.Then(string.Format("должен быть {0} обхода относительно эталонного алгоритма.", приростСкорости), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "То ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -219,24 +223,12 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Сравнение различных стратегий обхода объектного графа.")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Object graph traverse")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Имитация")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "DepthFirstSingleThreadStrategy")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Стратегия", "DepthFirstSingleThreadStrategy")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:прирост скорости", "0")]
-        public virtual void СравнениеРазличныхСтратегийОбходаОбъектногоГрафа__DepthFirstSingleThreadStrategy()
-        {
-            this.СравнениеРазличныхСтратегийОбходаОбъектногоГрафа_("DepthFirstSingleThreadStrategy", "0", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Сравнение различных стратегий обхода объектного графа.")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Object graph traverse")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Имитация")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "BreadthFirstSingleThreadStrategy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Стратегия", "BreadthFirstSingleThreadStrategy")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:прирост скорости", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:прирост скорости", "10")]
         public virtual void СравнениеРазличныхСтратегийОбходаОбъектногоГрафа__BreadthFirstSingleThreadStrategy()
         {
-            this.СравнениеРазличныхСтратегийОбходаОбъектногоГрафа_("BreadthFirstSingleThreadStrategy", "0", ((string[])(null)));
+            this.СравнениеРазличныхСтратегийОбходаОбъектногоГрафа_("BreadthFirstSingleThreadStrategy", "10", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -245,10 +237,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Имитация")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "DepthFirstMultiThreadStrategy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Стратегия", "DepthFirstMultiThreadStrategy")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:прирост скорости", "> 200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:прирост скорости", "200")]
         public virtual void СравнениеРазличныхСтратегийОбходаОбъектногоГрафа__DepthFirstMultiThreadStrategy()
         {
-            this.СравнениеРазличныхСтратегийОбходаОбъектногоГрафа_("DepthFirstMultiThreadStrategy", "> 200", ((string[])(null)));
+            this.СравнениеРазличныхСтратегийОбходаОбъектногоГрафа_("DepthFirstMultiThreadStrategy", "200", ((string[])(null)));
         }
     }
 }
