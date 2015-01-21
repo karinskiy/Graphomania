@@ -103,7 +103,6 @@ namespace Graphomania.ObjectGraphInspector.AcceptanceTests
             }
 
             //var traversedObjectRegistry = new HashsetObjectRegistry();
-            //var producerConsumerQueue = new ProducerConsumerQueueMock();
             //var objectGraphVisitor = new GraphBuildElementObjectGraphVisitor(producerConsumerQueue, new[] { typeof(Employee) });
             //var referenceProvider = new 
             return (IObjectGraphInspector)Activator.CreateInstance(strategyType, null, null, null);

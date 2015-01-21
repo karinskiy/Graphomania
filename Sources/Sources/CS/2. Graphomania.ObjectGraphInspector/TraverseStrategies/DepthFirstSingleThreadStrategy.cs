@@ -5,6 +5,8 @@
 
     public class DepthFirstSingleThreadStrategy : ObjectGraphInspectorStrategy
     {
+        private readonly object objectLock = new object();
+
         public DepthFirstSingleThreadStrategy(ITraversedObjectRegistry traversedObjectRegistry, IObjectGraphVisitor graphVisitor, IReferenceProvider referenceProvider)
             : base(traversedObjectRegistry, graphVisitor, referenceProvider)
         {
@@ -35,7 +37,10 @@
 
         private void MarkAsTraversed(object graphRoot)
         {
-            traversedObjectRegistry.MarkAsTraversed(graphRoot);
+            lock (objectLock)
+            {
+                traversedObjectRegistry.MarkAsTraversed(graphRoot);
+            }
         }
     }
 }

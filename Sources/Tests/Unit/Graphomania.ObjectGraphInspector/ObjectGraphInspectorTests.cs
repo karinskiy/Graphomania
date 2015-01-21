@@ -1,7 +1,10 @@
 ﻿namespace Graphomania.ObjectGraphInspector.UnitTests
 {
+    using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Runtime.Remoting.Messaging;
     using System.Threading.Tasks;
 
     using DomainModel.Personal;
@@ -33,61 +36,76 @@
 				}
             };
 
-            var traversedRegistry = new Mock<ITraversedObjectRegistry>().Object;
+            var traversedRegistry = new HashsetObjectRegistry();
 
-            Mock.Get(traversedRegistry)
-                .Setup(o => o.AlreadyTraversed(It.IsAny<object>()))
-                .Returns(false);
-
-            
-            var referenceProvider = new Mock<IReferenceProvider>().Object;
-
-			Mock.Get(referenceProvider)
-				.Setup(o => o.GetReferences(objectGraph))
-				.Returns(() => new [] 
-                { 
-                    new Reference("Subordinates", objectGraph, objectGraph.Subordinates.ElementAt(0)),
-					new Reference("Subordinates", objectGraph, objectGraph.Subordinates.ElementAt(1)),
-				});
-
-
-            var graphVisitor = new Mock<IObjectGraphVisitor>().Object;
+            var referenceProvider = new ReferenceProviderStub(objectGraph, objectGraph.Subordinates.ElementAt(0), objectGraph.Subordinates.ElementAt(1));
 
             var graphElements = new List<ObjectGraphElement>();
-
-			Mock.Get(graphVisitor)
-				.Setup(o => o.Visit(It.IsAny<object>()))
-				.Callback<object>(o => graphElements.Add(new NodeElement("Employee", "1")));
-
-            Mock.Get(graphVisitor)
-                .Setup(o => o.Visit(It.IsAny<Reference>()))
-                .Callback<Reference>(o => graphElements.Add(new RelationElement("1", "Refefe", "2")));
+            var graphVisitor = new ObjectElementVisitorMock(graphElements);
 
             var objectGraphInspector = new DepthFirstSingleThreadStrategy(traversedRegistry, graphVisitor, referenceProvider);
 
             // act
             await objectGraphInspector.Inspect(objectGraph);
-            
+
             // assert
             graphElements
-                .ShouldBeEquivalentTo(new ObjectGraphElement[]
+                .ShouldAllBeEquivalentTo(new ObjectGraphElement[]
                 {
                     new NodeElement("Employee", "1"), 
                     new NodeElement("Employee", "2"), 
                     new RelationElement("1", "Subordinates", "2"), 
                     new NodeElement("Employee", "3"), 
                     new RelationElement("1", "Subordinates", "3"), 
-                });
+                }, polymorphicItems: true);
+        }
+    }
 
-            //(await elementQueue.GetElements())
-            //    .ShouldBeEquivalentTo(new ObjectGraphElement[]
-            //    {
-            //        new NodeElement("Employee", "1"), 
-            //        new NodeElement("Employee", "2"), 
-            //        new RelationElement("1", "Subordinates", "2"), 
-            //        new NodeElement("Employee", "3"), 
-            //        new RelationElement("1", "Subordinates", "3"), 
-            //    });
+    public static class AssertionExtension
+    {
+        public static void ShouldAllBeEquivalentTo<T>(this IEnumerable<T> subject, IEnumerable expectation, bool polymorphicItems = false, string because = "", params object[] reasonArgs)
+        {
+            subject.ShouldAllBeEquivalentTo(expectation, opt => opt.IncludingAllRuntimeProperties(), because, reasonArgs);
+        }
+    }
+
+    public class ReferenceProviderStub : IReferenceProvider
+    {
+        private readonly Employee[] employees;
+
+        public ReferenceProviderStub(params Employee[] employees)
+        {
+            this.employees = employees;
+        }
+
+        public IEnumerable<Reference> GetReferences(object graphRoot)
+        {
+            var o = (Employee)graphRoot;
+            if (o.ID == "1")
+            {
+                yield return new Reference("Subordinates", employees[0], employees[1]);
+                yield return new Reference("Subordinates", employees[0], employees[2]);
+            }
+        }
+    }
+
+    public class ObjectElementVisitorMock : IObjectGraphVisitor
+    {
+        private readonly ICollection<ObjectGraphElement> graphElements;
+
+        public ObjectElementVisitorMock(ICollection<ObjectGraphElement> graphElements)
+        {
+            this.graphElements = graphElements;
+        }
+
+        public async Task Visit(object node)
+        {
+            await Task.Run(() => graphElements.Add(new NodeElement("Employee", ((Employee)node).ID)));
+        }
+
+        public async Task Visit(Reference reference)
+        {
+            await Task.Run(() => graphElements.Add(new RelationElement(((Employee)reference.From).ID, reference.Name, ((Employee)reference.To).ID)));
         }
     }
 }

@@ -22,9 +22,15 @@
             return ienum != null ? ienum.GetGenericArguments()[0] : null;
         }
 
-        public static bool IsNavigationProperty(this PropertyInfo propertyInfo, IEnumerable<Type> domainTypes)
+        public static bool IsCollectionProperty(this PropertyInfo propertyInfo, IEnumerable<Type> domainTypes)
         {
             var itemType = GetCollectionItemType(propertyInfo.PropertyType);
+
+            if (itemType == null)
+            {
+                return false;
+            }
+
             return domainTypes.Contains(itemType);
         }
 
@@ -47,12 +53,20 @@
                 .Where(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>))
                 .Select(t => t.GenericTypeArguments[0]).FirstOrDefault();
 
-            return enumType ?? type;
+            return enumType;
         }
 
         public static bool IsPlainProperty(this PropertyInfo propertyInfo, IEnumerable<Type> domainTypes)
         {
-            return !IsNavigationProperty(propertyInfo, domainTypes);
+            return !IsCollectionProperty(propertyInfo, domainTypes);
+        }
+
+        public static bool IsNavigationProperty(this PropertyInfo propertyInfo, IEnumerable<Type> domainTypes)
+        {
+            var navigationTypes = domainTypes.ToArray();
+
+            // Свойство должно быть типа домена.
+            return navigationTypes.Contains(propertyInfo.PropertyType) || IsCollectionProperty(propertyInfo, navigationTypes);
         }
     }
 }
