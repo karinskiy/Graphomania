@@ -46,7 +46,7 @@
             var objectGraphInspector = new DepthFirstSingleThreadStrategy(traversedRegistry, graphVisitor, referenceProvider);
 
             // act
-            await objectGraphInspector.Inspect(objectGraph);
+            objectGraphInspector.Inspect(objectGraph);
 
             // assert
             graphElements
@@ -98,14 +98,14 @@
             this.graphElements = graphElements;
         }
 
-        public async Task Visit(object node)
+        public void Visit(object node)
         {
-            await Task.Run(() => graphElements.Add(new NodeElement("Employee", ((Employee)node).ID)));
+            //await Task.Run(() => graphElements.Add(new NodeElement("Employee", ((Employee)node).ID)));
         }
 
-        public async Task Visit(Reference reference)
+        public void Visit(Reference reference)
         {
-            await Task.Run(() => graphElements.Add(new RelationElement(((Employee)reference.From).ID, reference.Name, ((Employee)reference.To).ID)));
+            //await Task.Run(() => graphElements.Add(new RelationElement(((Employee)reference.From).ID, reference.Name, ((Employee)reference.To).ID)));
         }
     }
 }

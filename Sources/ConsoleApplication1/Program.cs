@@ -53,7 +53,7 @@ namespace ConsoleApplication1
 
             for (var i = 0; i < runs; i++)
             {
-                objectGraphInspector.Inspect(objectGraph).Wait();
+                objectGraphInspector.Inspect(objectGraph);
             }
 
             stopwatch.Stop();
@@ -66,15 +66,13 @@ namespace ConsoleApplication1
     {
         public int counter = 0;
 
-        public async Task Visit(object node)
+        public void Visit(object node)
         {
             counter++;
-            await Task.Yield();
         }
 
-        public async Task Visit(Reference reference)
+        public void Visit(Reference reference)
         {
-            await Task.Yield();
         }
     }
 }

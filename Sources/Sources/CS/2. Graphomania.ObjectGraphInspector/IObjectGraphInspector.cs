@@ -4,6 +4,6 @@
 
     public interface IObjectGraphInspector
     {
-        Task Inspect(object graphRoot);
+        void Inspect(object graphRoot);
     }
 }

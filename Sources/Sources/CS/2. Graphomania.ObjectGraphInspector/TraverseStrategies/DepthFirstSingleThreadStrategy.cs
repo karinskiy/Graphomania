@@ -12,7 +12,7 @@
         {
         }
 
-        public override async Task Inspect(object graphRoot)
+        public override void Inspect(object graphRoot)
         {
             if (AlreadyTraversed(graphRoot))
             {
@@ -21,12 +21,12 @@
 
             MarkAsTraversed(graphRoot);
 
-            await graphVisitor.Visit(graphRoot);
+            graphVisitor.Visit(graphRoot);
 
             foreach (var reference in referenceProvider.GetReferences(graphRoot))
             {
-                await graphVisitor.Visit(reference);
-                await Inspect(reference.To);
+                graphVisitor.Visit(reference);
+                Inspect(reference.To);
             }
         }
 

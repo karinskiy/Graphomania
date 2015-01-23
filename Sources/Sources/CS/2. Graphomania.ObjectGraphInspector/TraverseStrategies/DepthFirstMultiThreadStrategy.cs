@@ -10,7 +10,7 @@
         {
         }
 
-        public override async Task Inspect(object graphRoot)
+        public override void Inspect(object graphRoot)
         {
             Thread.Sleep(100);
         }

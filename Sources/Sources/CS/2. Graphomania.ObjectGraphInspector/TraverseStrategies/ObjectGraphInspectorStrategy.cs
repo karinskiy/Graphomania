@@ -15,6 +15,6 @@
             this.referenceProvider = referenceProvider;
         }
 
-        public abstract Task Inspect(object graphRoot);
+        public abstract void Inspect(object graphRoot);
     }
 }

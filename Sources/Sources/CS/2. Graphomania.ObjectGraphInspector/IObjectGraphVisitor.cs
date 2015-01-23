@@ -4,8 +4,8 @@
 
     public interface IObjectGraphVisitor
     {
-        Task Visit(object node);
+        void Visit(object node);
 
-        Task Visit(Reference reference);
+        void Visit(Reference reference);
     }
 }

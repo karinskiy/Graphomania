@@ -19,7 +19,7 @@
             this.domainTypes = domainTypes;
         }
 
-        public async Task Visit(object node)
+        public void Visit(object node)
         {
             // Построение описателя узла графа.
             var nodeElement = new NodeElement("", "");
@@ -32,10 +32,10 @@
             }
 
             // Отправка в очередь.
-            await producerConsumerQueue.Enqueue(nodeElement);
+            producerConsumerQueue.Enqueue(nodeElement);
         }
 
-        public async Task Visit(Reference reference)
+        public void Visit(Reference reference)
         {
             throw new NotImplementedException();
         }
