@@ -43,6 +43,7 @@
     <Compile Include="TraverseStrategies\BreadthFirstSingleThreadStrategy.cs" />
     <Compile Include="BuildingQueue\IProducerConsumerQueue.cs" />
     <Compile Include="HashsetObjectRegistry.cs" />
+    <Compile Include="TraverseStrategies\DepthFirstMulti2Strategy.cs" />
     <Compile Include="TraverseStrategies\DepthFirstMultiThreadStrategy.cs" />
     <Compile Include="TraverseStrategies\DepthFirstSingleThreadStrategy.cs" />
     <Compile Include="GraphBuildElementObjectGraphVisitor.cs" />
