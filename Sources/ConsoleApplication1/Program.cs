@@ -26,7 +26,9 @@ namespace ConsoleApplication1
             var visitor = new NullVisitor();
             var referenceProvider = new ReflectiveReferenceProvider(new [] {typeof(Employee)});
 
-            IObjectGraphInspector objectGraphInspector = new DepthFirstSingleThreadStrategy(registry, visitor, referenceProvider);
+            //IObjectGraphInspector objectGraphInspector = new BreadthFirstSingleThreadStrategy(registry, visitor, referenceProvider);
+            //IObjectGraphInspector objectGraphInspector = new DepthFirstSingleThreadStrategy(registry, visitor, referenceProvider);
+            IObjectGraphInspector objectGraphInspector = new DepthFirstMultiThreadStrategy(registry, visitor, referenceProvider);
 
             ISingleObjectBuilder<HierarchySpec<Employee>> hierarchySpec = Builder<HierarchySpec<Employee>>.CreateNew()
                     .With(x => x.AddMethod = (a, b) => a.Subordinates.Add(b))

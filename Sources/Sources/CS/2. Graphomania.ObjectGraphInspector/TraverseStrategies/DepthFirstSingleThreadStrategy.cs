@@ -37,7 +37,7 @@
 
         private void MarkAsTraversed(object graphRoot)
         {
-            lock (objectLock)
+            //lock (objectLock)
             {
                 traversedObjectRegistry.MarkAsTraversed(graphRoot);
             }
