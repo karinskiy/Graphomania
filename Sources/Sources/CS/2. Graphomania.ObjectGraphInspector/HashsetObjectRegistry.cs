@@ -15,5 +15,10 @@
         {
             this.traversedObjects.Add(graphRoot);
         }
+
+        public void Clear()
+        {
+            traversedObjects.Clear();
+        }
     }
 }

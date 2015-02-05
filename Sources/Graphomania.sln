@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{56951822-5520-4E26-B824-21D09275BF64}"
 EndProject
@@ -32,6 +32,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphomania.ObjectGraphInspector.UnitTests", "Tests\Unit\Graphomania.ObjectGraphInspector\Graphomania.ObjectGraphInspector.UnitTests.csproj", "{2B12649C-886A-4F7C-A35E-ACEE97913E46}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{2DCF053A-B02A-4B79-A8E4-78AE9399D7F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Graphomania.CommandTranslator.AcceptanceTests", "Tests\Acceptance\Graphomania.CommandTranslator.AcceptanceTests\3. Graphomania.CommandTranslator.AcceptanceTests.csproj", "{5D9E0A4E-AC64-42B5-A3DC-4E661D3037D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Graphomania.CommandTranslator", "Sources\CS\Graphomania.CommandTranslator\3. Graphomania.CommandTranslator.csproj", "{8BBDC21F-28D6-4FEF-89A0-2AA9AD721EC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{2DCF053A-B02A-4B79-A8E4-78AE9399D7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DCF053A-B02A-4B79-A8E4-78AE9399D7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DCF053A-B02A-4B79-A8E4-78AE9399D7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9E0A4E-AC64-42B5-A3DC-4E661D3037D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9E0A4E-AC64-42B5-A3DC-4E661D3037D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9E0A4E-AC64-42B5-A3DC-4E661D3037D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9E0A4E-AC64-42B5-A3DC-4E661D3037D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BBDC21F-28D6-4FEF-89A0-2AA9AD721EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BBDC21F-28D6-4FEF-89A0-2AA9AD721EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BBDC21F-28D6-4FEF-89A0-2AA9AD721EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BBDC21F-28D6-4FEF-89A0-2AA9AD721EC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +104,7 @@ Global
 		{5C2E8BA4-F6F0-4305-9BD9-D4722F04FCE3} = {56951822-5520-4E26-B824-21D09275BF64}
 		{2B12649C-886A-4F7C-A35E-ACEE97913E46} = {FAB64F66-334F-4C15-B017-C3626007C3FA}
 		{2DCF053A-B02A-4B79-A8E4-78AE9399D7F7} = {E7610A97-7739-4C54-9374-3E3EEB00F054}
+		{5D9E0A4E-AC64-42B5-A3DC-4E661D3037D3} = {F06964F6-75ED-4C4F-93F3-242C08AF6637}
+		{8BBDC21F-28D6-4FEF-89A0-2AA9AD721EC6} = {E7610A97-7739-4C54-9374-3E3EEB00F054}
 	EndGlobalSection
 EndGlobal
