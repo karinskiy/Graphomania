@@ -77,6 +77,20 @@ namespace Graphomania.CommandTranslator.AcceptanceTests
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Элемент",
+                        "ID объекта",
+                        "Тип объекта",
+                        "Содержимое объекта"});
+#line 6
+ testRunner.When("на входе есть элементы графа", ((string)(null)), table1, "Если ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Команда",
+                        "Содержимое"});
+#line 9
+ testRunner.Then("на выходе будет команда:", ((string)(null)), table2, "То ");
+#line hidden
             this.ScenarioCleanup();
         }
         
@@ -86,7 +100,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ПреобразованиеВКомандыОбновления_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Преобразование в команды обновления.", ((string[])(null)));
-#line 6
+#line 12
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
@@ -98,7 +112,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ПреобразованиеВКомандыУдаления_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Преобразование в команды удаления.", ((string[])(null)));
-#line 8
+#line 14
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();

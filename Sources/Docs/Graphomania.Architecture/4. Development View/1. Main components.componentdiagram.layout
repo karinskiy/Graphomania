@@ -18,26 +18,26 @@
         </requiredInterfaceShape>
       </relativeChildShapes>
     </componentShape>
-    <componentShape Id="454b8ec9-1b69-4fdc-b104-3b1160c248df" isExpanded="false" absoluteBounds="4.75, 3.125, 1.9583333333333339, 0.7" customColor="161, 199, 231" whiteBoxBoundsHeight="0.95" whiteBoxBoundsWidth="1.9583333333333339" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.9583333333333339" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
-      <componentMoniker Id="de476684-75e5-4c9a-9c88-34dbabc76ee9" LastKnownName="CommandTranslator" />
-    </componentShape>
     <componentShape Id="6ad78b63-83ea-4b7b-9cdd-03240d8ac843" isExpanded="false" absoluteBounds="4.75, 4.625, 1.979166666666667, 0.7" customColor="161, 199, 231" whiteBoxBoundsHeight="0.95" whiteBoxBoundsWidth="1.979166666666667" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.979166666666667" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
       <componentMoniker Id="23d4a0e4-4a27-475c-baea-865785e5b92b" LastKnownName="DatabaseAdapter" />
     </componentShape>
-    <dependencyConnector edgePoints="[(5.72916666666667 : 4.625); (5.72916666666667 : 3.825)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
-      <dependencyMoniker Id="b103ceb4-ef7d-496c-8b18-b695f64ca225" />
+    <componentShape Id="c7e70cb3-129a-442b-bf94-95e0490958c5" isExpanded="false" absoluteBounds="4.75, 3.125, 1.947916666666667, 0.7" customColor="161, 199, 231" whiteBoxBoundsHeight="0.95" whiteBoxBoundsWidth="1.947916666666667" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.947916666666667" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
+      <componentMoniker Id="5aa51fa9-1b1c-4a3d-82dc-da59f7a04fd9" LastKnownName="CommandTranslator" />
+    </componentShape>
+    <dependencyConnector edgePoints="[(5.72395833333333 : 3.125); (5.72395833333333 : 2.37708337306976)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="1ec1fbe0-2b67-407b-a0ff-a0f99a6cf004" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="c7e70cb3-129a-442b-bf94-95e0490958c5" />
+        <componentShapeMoniker Id="512a7a52-d867-47a4-b721-9e42bb2f4b44" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(5.72395833333333 : 4.625); (5.72395833333333 : 3.825)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="b8aceccd-a448-4bcf-8ae6-20c310035406" />
       <relativeChildShapes />
       <nodes>
         <componentShapeMoniker Id="6ad78b63-83ea-4b7b-9cdd-03240d8ac843" />
-        <componentShapeMoniker Id="454b8ec9-1b69-4fdc-b104-3b1160c248df" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(5.72916666666667 : 3.125); (5.72916666666667 : 2.37708337306976)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
-      <dependencyMoniker Id="0380a8b4-f20e-45cb-9035-6c5376b1e979" />
-      <relativeChildShapes />
-      <nodes>
-        <componentShapeMoniker Id="454b8ec9-1b69-4fdc-b104-3b1160c248df" />
-        <componentShapeMoniker Id="512a7a52-d867-47a4-b721-9e42bb2f4b44" />
+        <componentShapeMoniker Id="c7e70cb3-129a-442b-bf94-95e0490958c5" />
       </nodes>
     </dependencyConnector>
   </nestedChildShapes>

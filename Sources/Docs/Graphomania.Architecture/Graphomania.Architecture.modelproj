@@ -37,6 +37,13 @@
       <SubType>Content</SubType>
       <DependentUpon>4. Development View\1.1. ObjectGraphInspector.componentdiagram</DependentUpon>
     </Content>
+    <Content Include="4. Development View\1.2. CommandTranslator.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="4. Development View\1.2. CommandTranslator.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>4. Development View\1.2. CommandTranslator.componentdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Graphomania.Architecture.uml">
       <SubType>Content</SubType>
     </Content>

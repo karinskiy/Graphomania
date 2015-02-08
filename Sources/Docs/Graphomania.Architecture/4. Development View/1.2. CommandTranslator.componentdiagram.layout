@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CommandTranslator">
+  <componentModelMoniker Id="0dcc4b21-29c0-41db-8fbf-f71a17149207" />
+  <nestedChildShapes>
+    <componentShape Id="15d51a1f-a0aa-4be8-9f0c-3a8c097c20da" absoluteBounds="3.1875, 3.3020833333333335, 6.4479166666666661, 3.6791666666666676" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="1be0e445-27f7-45bb-b1ec-b51549665ca0" LastKnownName="CommandTranslator" />
+    </componentShape>
+    <componentShape Id="2c4a5c53-a593-463d-9448-876f03ca3c38" isExpanded="false" absoluteBounds="3.75, 4.125, 1.7604166666666665, 0.7" customColor="161, 199, 231" whiteBoxBoundsHeight="0.95" whiteBoxBoundsWidth="1.5" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.5" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
+      <componentMoniker Id="02311fd5-7910-4b48-a9a7-55c0f68e03fa" LastKnownName="QueryTranslator" />
+    </componentShape>
+    <componentShape Id="7e222d47-0952-47a4-8e1a-a0e62269240c" isExpanded="false" absoluteBounds="7.375, 4.125, 1.7708333333333339, 0.7" customColor="161, 199, 231" whiteBoxBoundsHeight="0.95" whiteBoxBoundsWidth="1.8541666666666665" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.8541666666666665" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
+      <componentMoniker Id="6b0f4fb2-0a98-4280-9e0d-ff424b581d22" LastKnownName="ElementTranslator" />
+    </componentShape>
+    <componentShape Id="b1509281-e72d-4c7d-ae01-fcfb70604a59" isExpanded="false" absoluteBounds="5.5, 5.75, 1.8229166666666665, 0.7" customColor="161, 199, 231" whiteBoxBoundsHeight="0.95" whiteBoxBoundsWidth="1.8229166666666665" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.8229166666666665" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
+      <componentMoniker Id="46f5fdc1-9a17-4650-927f-720e55caed06" LastKnownName="CommandFactory" />
+    </componentShape>
+    <dependencyConnector edgePoints="[(4.5624995 : 4.825); (4.5624995 : 6.1); (5.5 : 6.1)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="0a042570-e923-4981-bd12-57a17a318de3" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="2c4a5c53-a593-463d-9448-876f03ca3c38" />
+        <componentShapeMoniker Id="b1509281-e72d-4c7d-ae01-fcfb70604a59" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(8.27156316348195 : 4.825); (8.27156316348195 : 6.11379504504504); (7.32291666666667 : 6.11379504504504)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="b46775ed-4e92-4c65-a3a7-44520216cba8" />
+      <relativeChildShapes />
+      <nodes>
+        <componentShapeMoniker Id="7e222d47-0952-47a4-8e1a-a0e62269240c" />
+        <componentShapeMoniker Id="b1509281-e72d-4c7d-ae01-fcfb70604a59" />
+      </nodes>
+    </dependencyConnector>
+  </nestedChildShapes>
+</componentDiagram>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="0dcc4b21-29c0-41db-8fbf-f71a17149207" name="CommandTranslator" linkedPackageId="4b2a041d-8bf2-47c8-833d-2ec337a00989" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="c9756d9a-f99e-4e08-8fda-7abb7919e212">
+      <profileInstance Id="2f5079b4-bf82-49e7-adfa-3fd28497cca4" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="388c8340-5f4c-4f8c-bc39-36f0b3177c9e">
+      <profileInstance Id="194fa7c6-33fe-4e46-97c1-2fb09366502a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="1be0e445-27f7-45bb-b1ec-b51549665ca0" name="CommandTranslator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3487e534-0f8d-4d20-9a3d-518d42ff1513" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="02311fd5-7910-4b48-a9a7-55c0f68e03fa" name="QueryTranslator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b9977eda-98cd-4f38-9b5e-ede6c1527367" />
+        <suppliersInternal>
+          <dependency Id="0a042570-e923-4981-bd12-57a17a318de3">
+            <componentMoniker Id="46f5fdc1-9a17-4650-927f-720e55caed06" LastKnownName="CommandFactory" />
+            <elementDefinition Id="32e5b143-41f5-45a1-bdfb-a377fad5303c" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="6b0f4fb2-0a98-4280-9e0d-ff424b581d22" name="ElementTranslator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a917569e-2330-4393-9b84-a04b8e391b61" />
+        <suppliersInternal>
+          <dependency Id="b46775ed-4e92-4c65-a3a7-44520216cba8">
+            <componentMoniker Id="46f5fdc1-9a17-4650-927f-720e55caed06" LastKnownName="CommandFactory" />
+            <elementDefinition Id="69c9bff4-7ee6-4212-890c-7dd40d0eca33" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="46f5fdc1-9a17-4650-927f-720e55caed06" name="CommandFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f6378977-f35d-4ee5-b2df-c8f5ca0db135" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="4b2a041d-8bf2-47c8-833d-2ec337a00989" name="Graphomania.Architecture">
+    <elementDefinition Id="85f4c8a1-a49c-426d-a991-8daadfd7f868" />
+  </package>
+</componentModel>

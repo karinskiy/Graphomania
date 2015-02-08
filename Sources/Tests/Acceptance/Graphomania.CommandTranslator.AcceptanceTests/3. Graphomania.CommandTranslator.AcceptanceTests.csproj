@@ -74,6 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Преобразование элементов графа в команды.feature</DependentUpon>
     </Compile>
+    <Compile Include="Преобразования запросов в команды.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Преобразования запросов в команды.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Sources\CS\2. Graphomania.ObjectGraphInspector\2. Graphomania.ObjectGraphInspector.csproj">
@@ -95,6 +100,10 @@
     <None Include="Преобразование элементов графа в команды.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Преобразование элементов графа в команды.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Преобразования запросов в команды.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Преобразования запросов в команды.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Choose>

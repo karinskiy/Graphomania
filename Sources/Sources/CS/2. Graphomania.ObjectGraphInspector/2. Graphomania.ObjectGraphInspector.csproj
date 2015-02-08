@@ -39,27 +39,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ReferenceProvider\ReflectiveReferenceProvider.cs" />
-    <Compile Include="TraverseStrategies\BreadthFirstSingleThreadStrategy.cs" />
-    <Compile Include="BuildingQueue\IProducerConsumerQueue.cs" />
-    <Compile Include="HashsetObjectRegistry.cs" />
-    <Compile Include="TraverseStrategies\DepthFirstMulti2Strategy.cs" />
-    <Compile Include="TraverseStrategies\DepthFirstMultiThreadStrategy.cs" />
-    <Compile Include="TraverseStrategies\DepthFirstSingleThreadStrategy.cs" />
-    <Compile Include="GraphBuildElementObjectGraphVisitor.cs" />
-    <Compile Include="IObjectGraphInspector.cs" />
-    <Compile Include="IObjectGraphVisitor.cs" />
-    <Compile Include="IReferenceProvider.cs" />
-    <Compile Include="ITraversedObjectRegistry.cs" />
-    <Compile Include="IVisitable.cs" />
+    <Compile Include="Read\IObjectGraphBuilder.cs" />
+    <Compile Include="Read\Queries\Query.cs" />
+    <Compile Include="Write\ReferenceProvider\ReflectiveReferenceProvider.cs" />
+    <Compile Include="Write\TraverseStrategies\BreadthFirstSingleThreadStrategy.cs" />
+    <Compile Include="Write\BuildingQueue\IProducerConsumerQueue.cs" />
+    <Compile Include="Write\HashsetObjectRegistry.cs" />
+    <Compile Include="Write\TraverseStrategies\DepthFirstMulti2Strategy.cs" />
+    <Compile Include="Write\TraverseStrategies\DepthFirstMultiThreadStrategy.cs" />
+    <Compile Include="Write\TraverseStrategies\DepthFirstSingleThreadStrategy.cs" />
+    <Compile Include="Write\GraphBuildElementObjectGraphVisitor.cs" />
+    <Compile Include="Write\IObjectGraphInspector.cs" />
+    <Compile Include="Write\IObjectGraphVisitor.cs" />
+    <Compile Include="Write\IReferenceProvider.cs" />
+    <Compile Include="Write\ITraversedObjectRegistry.cs" />
+    <Compile Include="Write\IVisitable.cs" />
     <Compile Include="Model\ObjectGraphElement.cs" />
     <Compile Include="Model\NodeElement.cs" />
     <Compile Include="Model\RelationElement.cs" />
-    <Compile Include="TraverseStrategies\ObjectGraphInspectorStrategy.cs" />
+    <Compile Include="Write\TraverseStrategies\ObjectGraphInspectorStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyDesc.cs" />
-    <Compile Include="Reference.cs" />
-    <Compile Include="TypeExtension.cs" />
+    <Compile Include="Write\PropertyDesc.cs" />
+    <Compile Include="Write\Reference.cs" />
+    <Compile Include="Write\TypeExtension.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -92,24 +92,6 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <component
-        Id="7d8228e8-099f-415f-82ca-6de031112c16"
-        name="CommandTranslator"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <suppliersInternal>
-          <dependency
-            Id="6b6a2876-5d93-494e-b1e7-cbe3cd8ed26f">
-            <componentMoniker
-              Id="0cc2793f-8c0a-48cf-bdaa-5324fc5dbd4d"
-              LastKnownName="ObjectGraphInspector"
-              LastKnownLocation="Graphomania.Architecture.uml" />
-          </dependency>
-        </suppliersInternal>
-      </component>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <component
         Id="f4e0be22-d5c0-43e1-9c97-304fc75d7d48"
         name="DatabaseAdapter"
         isAbstract="false"
@@ -117,9 +99,9 @@
         isActiveClass="false">
         <suppliersInternal>
           <dependency
-            Id="b0e6a52b-d8ca-4b52-9cc9-d1d92d4fd0b6">
+            Id="6394dddd-fd01-4311-a7b0-157e766d0518">
             <componentMoniker
-              Id="7d8228e8-099f-415f-82ca-6de031112c16"
+              Id="3487e534-0f8d-4d20-9a3d-518d42ff1513"
               LastKnownName="CommandTranslator"
               LastKnownLocation="Graphomania.Architecture.uml" />
           </dependency>
@@ -269,6 +251,68 @@
         name="IPublisherConsumerQueue"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="3487e534-0f8d-4d20-9a3d-518d42ff1513"
+        name="CommandTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="7e1e50e0-0aea-4fc6-8c70-e72cea369c4d">
+            <componentMoniker
+              Id="0cc2793f-8c0a-48cf-bdaa-5324fc5dbd4d"
+              LastKnownName="ObjectGraphInspector"
+              LastKnownLocation="Graphomania.Architecture.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b9977eda-98cd-4f38-9b5e-ede6c1527367"
+        name="QueryTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="32e5b143-41f5-45a1-bdfb-a377fad5303c">
+            <componentMoniker
+              Id="f6378977-f35d-4ee5-b2df-c8f5ca0db135"
+              LastKnownName="CommandFactory"
+              LastKnownLocation="Graphomania.Architecture.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="a917569e-2330-4393-9b84-a04b8e391b61"
+        name="ElementTranslator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="69c9bff4-7ee6-4212-890c-7dd40d0eca33">
+            <componentMoniker
+              Id="f6378977-f35d-4ee5-b2df-c8f5ca0db135"
+              LastKnownName="CommandFactory"
+              LastKnownLocation="Graphomania.Architecture.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="f6378977-f35d-4ee5-b2df-c8f5ca0db135"
+        name="CommandFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

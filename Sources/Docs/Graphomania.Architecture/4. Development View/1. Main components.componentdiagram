@@ -21,23 +21,12 @@
       </component>
     </componentModelHasComponents>
     <componentModelHasComponents>
-      <component Id="de476684-75e5-4c9a-9c88-34dbabc76ee9" name="CommandTranslator" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="7d8228e8-099f-415f-82ca-6de031112c16" />
-        <suppliersInternal>
-          <dependency Id="0380a8b4-f20e-45cb-9035-6c5376b1e979">
-            <componentMoniker Id="a046ba73-4383-47d4-9575-2066c5d13a4d" LastKnownName="ObjectGraphInspector" />
-            <elementDefinition Id="6b6a2876-5d93-494e-b1e7-cbe3cd8ed26f" />
-          </dependency>
-        </suppliersInternal>
-      </component>
-    </componentModelHasComponents>
-    <componentModelHasComponents>
       <component Id="23d4a0e4-4a27-475c-baea-865785e5b92b" name="DatabaseAdapter" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f4e0be22-d5c0-43e1-9c97-304fc75d7d48" />
         <suppliersInternal>
-          <dependency Id="b103ceb4-ef7d-496c-8b18-b695f64ca225">
-            <componentMoniker Id="de476684-75e5-4c9a-9c88-34dbabc76ee9" LastKnownName="CommandTranslator" />
-            <elementDefinition Id="b0e6a52b-d8ca-4b52-9cc9-d1d92d4fd0b6" />
+          <dependency Id="b8aceccd-a448-4bcf-8ae6-20c310035406">
+            <componentMoniker Id="5aa51fa9-1b1c-4a3d-82dc-da59f7a04fd9" LastKnownName="CommandTranslator" />
+            <elementDefinition Id="6394dddd-fd01-4311-a7b0-157e766d0518" />
           </dependency>
         </suppliersInternal>
       </component>
@@ -52,6 +41,17 @@
         <elementDefinition Id="1ba15543-a0ac-4125-87e1-6277a5867c57" />
       </Interface>
     </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="5aa51fa9-1b1c-4a3d-82dc-da59f7a04fd9" name="CommandTranslator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3487e534-0f8d-4d20-9a3d-518d42ff1513" />
+        <suppliersInternal>
+          <dependency Id="1ec1fbe0-2b67-407b-a0ff-a0f99a6cf004">
+            <componentMoniker Id="a046ba73-4383-47d4-9575-2066c5d13a4d" LastKnownName="ObjectGraphInspector" />
+            <elementDefinition Id="7e1e50e0-0aea-4fc6-8c70-e72cea369c4d" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
   </packagedElements>
   <package Id="ad95ad39-dd0f-4573-9917-4fc835e789c2" name="Graphomania.Architecture">
     <elementDefinition Id="85f4c8a1-a49c-426d-a991-8daadfd7f868" />

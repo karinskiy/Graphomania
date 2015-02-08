@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAdapter\DataRecord.cs" />
+    <Compile Include="DatabaseAdapter\DbCommand.cs" />
+    <Compile Include="IQueryToCommandTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
